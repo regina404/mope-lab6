@@ -4,9 +4,10 @@ import numpy as np
 from numpy.linalg import solve
 from scipy.stats import f, t
 from prettytable import PrettyTable
+#зацикліть програму 100 разів, та виведіть кількість адекватних моделей
 count=0
 adekvat=0
-while count!=100:
+while count!=100:# 
     m = 3
     n = 15
 
@@ -208,10 +209,10 @@ while count!=100:
     print("Fp =", Fp)
     if Fp < f.ppf(q=0.95, dfn=F4, dfd=F3) and len(coefs1)!=2 : # Додали додаткову умову: якщо кількість значимих коефіціентів = 2, то приймаємо, що модель не адекватна
         print("Рівняння регресії адекватне при рівні значимості 0.05")
-        count=count+1
+        count=count+1 #зміни
         adekvat=adekvat+1
 
     else:
         print("Рівняння регресії неадекватне при рівні значимості 0.05")
         count = count + 1
-print("Кількість адекватних моделей",adekvat)
+print("Кількість адекватних моделей",adekvat)#
